@@ -13,7 +13,7 @@ class _TODOListPageState extends State<TODOListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text('TODO List')),
+        title: const Center(child: Text('TODO List')),
       ),
       body: Container(),
       floatingActionButton: FloatingActionButton.extended(
@@ -25,6 +25,6 @@ class _TODOListPageState extends State<TODOListPage> {
 
   void navigateToAddPage() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => AddTodoPage()));
+        context, MaterialPageRoute(builder: (context) => const AddTodoPage()));
   }
 }
