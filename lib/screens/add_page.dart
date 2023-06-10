@@ -57,6 +57,8 @@ class _AddTodoPageState extends State<AddTodoPage> {
 
     // show success or fail message based on status
     if (request.statusCode == 201) {
+      titleController.text = '';
+      descriptionController.text = '';
       print("sucessfully executed");
       successMessage('creation sucessfully ');
     } else {
@@ -81,4 +83,6 @@ class _AddTodoPageState extends State<AddTodoPage> {
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
+
+ 
 }
