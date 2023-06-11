@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_todo_rest_api/utils/snackbar_helper.dart';
 import 'package:http/http.dart' as http;
 
 class AddTodoPage extends StatefulWidget {
@@ -83,10 +84,10 @@ class _AddTodoPageState extends State<AddTodoPage> {
       // titleController.text = '';
       // descriptionController.text = '';
       // print("sucessfully updated");
-      successMessage('sucessfully updated ');
+      successMessage(context,'sucessfully updated ');
     } else {
       // print(" update failed");
-      showErrorMessage("update failed");
+      showErrorMessage(context,"update failed");
       // print(request.body);
     }
   }
@@ -111,27 +112,13 @@ class _AddTodoPageState extends State<AddTodoPage> {
       titleController.text = '';
       descriptionController.text = '';
       print("sucessfully executed");
-      successMessage('creation sucessfully ');
+      successMessage(context,'creation sucessfully ');
     } else {
       print("failfully executed");
-      showErrorMessage("failed to execute");
+      showErrorMessage(context,"failed to execute");
       print(request.body);
     }
   }
 
-  void successMessage(String message) {
-    final snackBar = SnackBar(content: Text(message));
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-  }
-
-  void showErrorMessage(String message) {
-    final snackBar = SnackBar(
-      content: Text(
-        message,
-        style: const TextStyle(color: Colors.white),
-      ),
-      backgroundColor: Colors.red,
-    );
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-  }
+  
 }
